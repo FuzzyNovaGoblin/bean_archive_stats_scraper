@@ -40,6 +40,7 @@ pub async fn build_notification_msg(data: &str) -> Result<String, Box<dyn std::e
         stat_set.insert(working_string);
     }
 
-    Ok(stat_set.into_iter().collect::<Vec<_>>().join("\n"))
-
+    let mut stats = stat_set.into_iter().collect::<Vec<_>>();
+    stats.sort();
+    Ok(stats.join("\n"))
 }
