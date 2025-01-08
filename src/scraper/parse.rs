@@ -2,7 +2,7 @@ use std::collections::HashSet;
 
 use scraper::Selector;
 
-pub async fn tbd(data: &str) -> Result<String, Box<dyn std::error::Error>> {
+pub async fn build_notification_msg(data: &str) -> Result<String, Box<dyn std::error::Error>> {
     let parser = scraper::Html::parse_fragment(&data);
 
     let outer_selector =
