@@ -4,6 +4,8 @@ bot_token = "TOKEN"   # this should be your discord bot token you can generate t
 
 cookie_value = "COOKIE"    # get this from a active login to ao3
 
+url = "https://archiveofourown.org/users/YOUR_USERNAME_HERE/stats" # the url where the scraper will get your stats from
+
 [destination]
     id = 1111111111111111111   # id of the chanel to send the msg to, to find right click and choose `Copy channel id`
     ch_type="server"           # either `server` or `dm` whatever `id` is pointing to
