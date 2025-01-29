@@ -7,7 +7,7 @@ use std::{thread::sleep, time::Duration};
 pub async fn timer(
     ctx: Ctx,
     config: &Config,
-    target_time: DateTimeParts,
+    target_time: &DateTimeParts,
 ) -> Result<(), Box<dyn std::error::Error>> {
     loop {
         let target_time = target_time

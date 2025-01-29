@@ -27,29 +27,6 @@ pub async fn send_msg(
     Ok(())
 }
 
-pub async fn report_reminder_notification(
-    ctx: crate::Ctx,
-    reminder_msg: String,
-    dest: String,
-    time: String,
-    file: String,
-) {
-    println!("report_reminder_notification {reminder_msg}  time: {time}");
-
-    let embed = CreateEmbed::new()
-        .title(reminder_msg.clone())
-        .description(format!("time: {time}\nfile: {file}"));
-
-    send_msg(
-        ctx.clone(),
-        reminder_msg,
-        None,
-        Some(vec![embed]),
-        ctx.get_dest(),
-    )
-    .await
-    .unwrap();
-}
 
 pub async fn report_rust_error(ctx: Ctx, err_msg: String) {
     eprintln!("err msg: {}", err_msg);

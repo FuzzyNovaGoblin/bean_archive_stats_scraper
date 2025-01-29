@@ -1,5 +1,4 @@
 use shared_singleton::*;
-use std::collections::HashMap;
 
 pub struct State {}
 

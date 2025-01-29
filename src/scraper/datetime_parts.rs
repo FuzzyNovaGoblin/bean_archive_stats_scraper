@@ -1,34 +1,13 @@
 use chrono::{DateTime, Datelike, Duration, Local, LocalResult, TimeZone, Timelike};
 use std::fmt::Display;
 
-#[derive(Eq, Hash, PartialEq, Clone, Debug)]
+#[derive(Eq, Hash, PartialEq, Clone, Debug, serde::Deserialize)]
 pub struct DateTimeParts {
-    hour: u32,
-    minute: u32,
+    pub hour: u32,
+    pub minute: u32,
 }
 
 impl DateTimeParts {
-    pub fn new(hour: u32, minute: u32) -> DateTimeParts {
-        DateTimeParts { hour, minute }
-    }
-
-    // fn parse_u32(mat: Option<Match<'_>>) -> Result<Option<u32>, String> {
-    //     match mat {
-    //         Some(v) => match v.as_str().parse::<u32>() {
-    //             Ok(v) => Ok(Some(v)),
-    //             Err(e) => {
-    //                 Err(format!(
-    //                         "Error parsing value ({value}) as u32\nError at {file}:{line}  with message:```{msg:?}```",
-    //                         value=v.as_str(),
-    //                         file = file!(),
-    //                         line = line!(),
-    //                         msg = e
-    //                     ))
-    //             }
-    //         },
-    //         None => Ok(None),
-    //     }
-    // }
 
     pub fn get_target_time(&self) -> LocalResult<DateTime<Local>> {
         let day: DateTime<Local> = {

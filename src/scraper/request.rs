@@ -6,8 +6,7 @@ use std::io::Read;
 pub async fn make_request(config: Config) -> Result<String, Box<dyn std::error::Error>> {
     let mut req = reqwest::Request::new(
         Method::GET,
-        // Url::parse("https://archiveofourown.org/users/FuzzyNovaGoblin/stats")?,
-        Url::parse("https://archiveofourown.org/users/witch_of_history/stats")?,
+        Url::parse(&config.url)?,
     );
     req.headers_mut().append("Cookie", HeaderValue::from_str(&config.cookie_value)?);
 

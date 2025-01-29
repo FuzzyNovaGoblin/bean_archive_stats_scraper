@@ -1,11 +1,6 @@
 use self::context::CacheAndHttp;
 use crate::config::Context;
-use serenity::all::{
-    Client, CreateInteractionResponse, CreateInteractionResponseMessage, EventHandler,
-    GatewayIntents, Interaction, Ready,
-};
-use serenity::async_trait;
-use serenity::framework::standard::{Configuration, StandardFramework};
+use serenity::all::{Client, GatewayIntents};
 use std::sync::Arc;
 
 pub mod context;

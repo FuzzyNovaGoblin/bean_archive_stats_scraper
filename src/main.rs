@@ -31,7 +31,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     loop {
         if let Err(e) =
-            timer::timer(ctx.clone(), &config, scraper::datetime_parts::DateTimeParts::new(23, 30)).await
+            timer::timer(ctx.clone(), &config, &config.time).await
         {
             spawn(bot::send_msgs::report_rust_error(
                 ctx.clone(),

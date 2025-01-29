@@ -1,0 +1,13 @@
+# actual file should be at /etc/bean_archive_stats_scraper/config.toml
+
+bot_token = "TOKEN"   # this should be your discord bot token you can generate this at `https://discord.com/developers/applications`
+
+cookie_value = "COOKIE"    # get this from a active login to ao3
+
+[destination]
+    id = 1111111111111111111   # id of the chanel to send the msg to, to find right click and choose `Copy channel id`
+    ch_type="server"           # either `server` or `dm` whatever `id` is pointing to
+
+[time]
+	hour = 23       # the hour this scrape should run (24 hour time)
+	minute = 30     # the minute of the hour the scrape should run

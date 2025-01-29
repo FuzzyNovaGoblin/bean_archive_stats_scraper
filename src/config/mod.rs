@@ -1,16 +1,17 @@
 use self::destination::Destination;
-use crate::bot::context::DisCtx;
+use crate::{bot::context::DisCtx, scraper::datetime_parts::DateTimeParts};
 use shared_singleton::*;
 
 pub mod destination;
 pub mod state;
-pub mod vault;
 
 #[derive(serde::Deserialize, Debug, Clone)]
 pub struct Config {
     pub bot_token: String,
+    pub url: String,
     pub destination: destination::Destination,
     pub cookie_value: String,
+    pub time: DateTimeParts,
 }
 
 impl_singleton_arc!(Config, Config::load());
@@ -41,10 +42,6 @@ pub struct Context {
 
 impl Context {
     pub fn get_error_ch(&self) -> &Destination {
-        &self.config.destination
-    }
-
-    pub fn get_dest(&self) -> &Destination {
         &self.config.destination
     }
 }
